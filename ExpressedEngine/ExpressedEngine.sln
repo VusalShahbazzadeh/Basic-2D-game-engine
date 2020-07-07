@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressedEngine", "ExpressedEngine\ExpressedEngine.csproj", "{CDB727BD-81C5-4AE3-B036-6BB6C0A4731A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDB727BD-81C5-4AE3-B036-6BB6C0A4731A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDB727BD-81C5-4AE3-B036-6BB6C0A4731A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDB727BD-81C5-4AE3-B036-6BB6C0A4731A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDB727BD-81C5-4AE3-B036-6BB6C0A4731A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A4625FE-EA07-4D9C-A073-2CF284EECA56}
+	EndGlobalSection
+EndGlobal
