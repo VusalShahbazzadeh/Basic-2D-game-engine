@@ -76,7 +76,12 @@ namespace ExpressedEngine
 			{
 				player.Position.X  += 1f;
 			}
-			if (player.IsColliding("Ground"))
+			Sprite2D coin = player.IsColliding("Coin");
+			if (coin!= null)
+			{
+				coin.DestroySelf();
+			}
+			if (player.IsColliding("Ground")!=null)
 			{
 				//times++;
 				//Log.Info($"Colliding {times}");

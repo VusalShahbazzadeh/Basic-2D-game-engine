@@ -31,15 +31,8 @@ namespace ExpressedEngine.ExpressedEngine
 			ExpressedEngine.RegisterSprite(this);
 		}
 
-		public bool IsColliding(string tag)
+		public Sprite2D IsColliding(string tag)
 		{
-			/*
-			if (a.Position.X < b.Position.X+b.Scale.X&&
-				a.Position.X+a.Scale.X>b.Position.X&&
-				a.Position.Y < b.Position.Y  + b.Scale.Y &&
-				a.Position.Y + a.Scale.Y > b.Position.Y
-				)
-				return true;*/
 			foreach (Sprite2D b in ExpressedEngine.AllSprites)
 			{
 				if(b.Tag == tag)
@@ -49,10 +42,10 @@ namespace ExpressedEngine.ExpressedEngine
 					Position.Y < b.Position.Y + b.Scale.Y &&
 					Position.Y + Scale.Y > b.Position.Y
 					)
-						return true;
+						return b;
 				}
 			}
-			return false;
+			return null;
 		}
 
 		public void DestroySelf()
