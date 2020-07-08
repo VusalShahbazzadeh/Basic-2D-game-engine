@@ -14,7 +14,6 @@ namespace ExpressedEngine.ExpressedEngine
 		public string Directory = "";
 		public string Tag = "";
 		public Bitmap Sprite = null;
-		public bool IsReference = false;
 
 		public Sprite2D(Vector2 Position, Vector2 Scale, string Directory, string Tag)
 		{
@@ -34,7 +33,6 @@ namespace ExpressedEngine.ExpressedEngine
 
 		public Sprite2D(Vector2 Scale,string Directory)
 		{
-			this.IsReference = true;
 			this.Scale = Scale;
 			this.Directory = Directory;
 
@@ -42,9 +40,7 @@ namespace ExpressedEngine.ExpressedEngine
 			Bitmap sprite = new Bitmap(tmp, (int)this.Scale.X, (int)this.Scale.Y);
 
 			Sprite = sprite;
-
-			Log.Info($"[SHAPE2D]({Tag}) - Has been registered! ");
-			ExpressedEngine.RegisterSprite(this);
+			
 		}
 
 		public Sprite2D(Vector2 Position, Vector2 Scale, Sprite2D reference, string Tag)

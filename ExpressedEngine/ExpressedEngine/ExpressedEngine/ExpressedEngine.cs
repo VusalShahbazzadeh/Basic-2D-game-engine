@@ -99,7 +99,6 @@ namespace ExpressedEngine.ExpressedEngine
 
 				foreach (Sprite2D sprite in AllSprites)
 				{
-					if(!sprite.IsReference)
 					g.DrawImage(sprite.Sprite, sprite.Position.X, sprite.Position.Y, sprite.Scale.X, sprite.Scale.Y);
 				}
 			}
