@@ -43,12 +43,15 @@ namespace ExpressedEngine.ExpressedEngine
 			Window.Paint += Renderer;
 			Window.KeyDown += Window_KeyDown;
 			Window.KeyUp += Window_KeyUp;
+			Window.FormBorderStyle = FormBorderStyle.FixedToolWindow;
+			Window.FormClosing += Window_FormClosing;
 
 			GameLoopThread = new Thread(GameLoop);
 			GameLoopThread.Start();
 
 			Application.Run(Window);		}
 
+		private void Window_FormClosing(object sender, FormClosingEventArgs e) => GameLoopThread.Abort();
 		private void Window_KeyUp(object sender, KeyEventArgs e) =>GetKeyUp(e);
 		private void Window_KeyDown(object sender, KeyEventArgs e) => GetKeyDown(e);
 		public static void RegisterShape(Shape2D shape) => AllShapes.Add(shape);
