@@ -90,16 +90,19 @@ namespace ExpressedEngine.ExpressedEngine
 
 			g.TranslateTransform(CameraPosition.X, CameraPosition.Y);
 			g.RotateTransform(CameraAngle);
-			foreach (Shape2D shape in AllShapes)
+			try
 			{
-				g.FillRectangle(new SolidBrush(Color.Red), shape.Position.X, shape.Position.Y, shape.Scale.X, shape.Scale.Y);
-			}
+				foreach (Shape2D shape in AllShapes)
+				{
+					g.FillRectangle(new SolidBrush(Color.Red), shape.Position.X, shape.Position.Y, shape.Scale.X, shape.Scale.Y);
+				}
 
-			foreach (Sprite2D sprite in AllSprites)
-			{
-				g.DrawImage(sprite.Sprite,sprite.Position.X,sprite.Position.Y,sprite.Scale.X,sprite.Scale.Y);
+				foreach (Sprite2D sprite in AllSprites)
+				{
+					g.DrawImage(sprite.Sprite, sprite.Position.X, sprite.Position.Y, sprite.Scale.X, sprite.Scale.Y);
+				}
 			}
-			
+			catch { }
 		}
 
 		public abstract void OnLoad();
