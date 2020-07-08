@@ -27,6 +27,6 @@ namespace ExpressedEngine.ExpressedEngine
 		/// </summary>
 		/// <returns></returns>
 		public static Vector2 Zero() => new Vector2(0,0);
-
+		public Vector2 Copy() => new Vector2(this.X, this.Y);
 	}
 }

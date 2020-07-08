@@ -18,6 +18,8 @@ namespace ExpressedEngine
 		Sprite2D player;
 		Sprite2D player2;
 
+		Vector2 lastPos = Vector2.Zero();
+
 		string[,] Map =
 		{
 			{"g","g","g","g","g","g","g" },
@@ -44,8 +46,8 @@ namespace ExpressedEngine
 				}
 			}
 
-			player = new Sprite2D(new Vector2(30, 30), new Vector2(50, 50), "Players/skull", "Player");
-			player2 = new Sprite2D(new Vector2(100, 0), new Vector2(200, 200), "Players/skull", "Player2");
+			player = new Sprite2D(new Vector2(50, 50), new Vector2(50, 50), "Players/skull", "Player");
+			//player2 = new Sprite2D(new Vector2(100, 0), new Vector2(200, 200), "Players/skull", "Player2");
 
 		}
 		public override void OnDraw()
@@ -74,8 +76,13 @@ namespace ExpressedEngine
 			}
 			if (player.IsColliding("Ground"))
 			{
-				times++;
-				Log.Info($"Colliding {times}");
+				//times++;
+				//Log.Info($"Colliding {times}");
+				player.Position = lastPos.Copy();
+			}
+			else
+			{
+				lastPos = player.Position.Copy();
 			}
 				
 
