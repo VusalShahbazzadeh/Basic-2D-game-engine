@@ -28,6 +28,7 @@ namespace ExpressedEngine.ExpressedEngine
 
 		public Color BackgroundColor = Color.Beige;
 
+		public Vector2 CameraZoom = new Vector2(0.8f, 0.8f);
 		public Vector2 CameraPosition = Vector2.Zero();
 		public float CameraAngle = 0;
 
@@ -90,6 +91,7 @@ namespace ExpressedEngine.ExpressedEngine
 
 			g.TranslateTransform(CameraPosition.X, CameraPosition.Y);
 			g.RotateTransform(CameraAngle);
+			g.ScaleTransform(CameraZoom.X,CameraZoom.Y);
 			try
 			{
 				foreach (Shape2D shape in AllShapes)

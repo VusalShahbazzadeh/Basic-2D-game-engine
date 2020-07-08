@@ -22,13 +22,18 @@ namespace ExpressedEngine
 
 		string[,] Map =
 		{
-			{"g","g","g","g","g","g","g" },
-			{"g","c","c","c","c","c","g" },
-			{"g","c","c","c","g","c","g" },
-			{"g","c","g","g","g","c","g" },
-			{"g","c","g","c","g","c","g" },
-			{"g","c","g","c","c","c","g" },
-			{"g","g","g","g","g","g","g" }
+			{ "g","g","g","g","g","g","g","g","g","g","g","g","g","g","g"},
+			{ "g",".",".",".",".",".","g",".",".",".",".","c","g","c","g"},
+			{ "g",".","g",".",".",".","g",".",".","g",".",".","g",".","g"},
+			{ "g",".","g",".",".",".","g",".",".","g",".",".","g",".","g"},
+			{ "g","c","g",".",".",".","g",".",".","g",".",".","g",".","g"},
+			{ "g","c","g",".",".",".","g",".","g","g","g","c","g",".","g"},
+			{ "g","c","g","c",".",".","g","c","c","c","g","c","g",".","g"},
+			{ "g",".","g","g","g",".","g","c","c","c","g","c","g",".","g"},
+			{ "g",".","g","p","g",".","g","g","g",".","g",".","g",".","g"},
+			{ "g",".","g",".","g",".","g",".",".",".","g",".","g",".","g"},
+			{ "g",".",".",".","g",".","c","c",".",".","g",".",".",".","g"},
+			{ "g","g","g","g","g","g","g","g","g","g","g","g","g","g","g"}
 		};
 
 
@@ -46,10 +51,11 @@ namespace ExpressedEngine
 						new Sprite2D(new Vector2(i * 50, j * 50), new Vector2(50, 50), groundRef, "Ground");
 					if (Map[j, i] == "c")
 						new Sprite2D(new Vector2(i * 50, j * 50), new Vector2(50, 50), coinRef, "Coin");
+					if (Map[j, i] == "p")
+						player = new Sprite2D(new Vector2(i * 50+5, j * 50+5), new Vector2(40, 40), "Players/skull", "Player");
 				}
 			}
 
-			player = new Sprite2D(new Vector2(50, 50), new Vector2(40, 40), "Players/skull", "Player");
 			//player2 = new Sprite2D(new Vector2(100, 0), new Vector2(200, 200), "Players/skull", "Player2");
 
 		}
@@ -59,6 +65,7 @@ namespace ExpressedEngine
 		int times = 0;
 		public override void OnUpdate()
 		{
+			if (player == null) return;
 			if (up)
 			{
 				player.Position.Y -= 1f;
