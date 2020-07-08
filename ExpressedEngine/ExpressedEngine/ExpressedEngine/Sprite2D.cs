@@ -14,6 +14,7 @@ namespace ExpressedEngine.ExpressedEngine
 		public string Directory = "";
 		public string Tag = "";
 		public Bitmap Sprite = null;
+		public bool IsReference = false;
 
 		public Sprite2D(Vector2 Position, Vector2 Scale, string Directory, string Tag)
 		{
