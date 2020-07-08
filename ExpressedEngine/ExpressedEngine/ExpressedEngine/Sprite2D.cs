@@ -31,6 +31,19 @@ namespace ExpressedEngine.ExpressedEngine
 			ExpressedEngine.RegisterSprite(this);
 		}
 
+		public Sprite2D(Vector2 Position, Vector2 Scale, Sprite2D reference, string Tag)
+		{
+			this.Position = Position;
+			this.Scale = Scale;
+			this.Tag = Tag;
+			
+
+			Sprite = reference.Sprite;
+
+			Log.Info($"[SHAPE2D]({Tag}) - Has been registered! ");
+			ExpressedEngine.RegisterSprite(this);
+		}
+
 		public Sprite2D IsColliding(string tag)
 		{
 			foreach (Sprite2D b in ExpressedEngine.AllSprites)

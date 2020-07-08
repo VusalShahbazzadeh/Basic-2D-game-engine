@@ -72,7 +72,7 @@ namespace ExpressedEngine.ExpressedEngine
 					OnDraw();
 					Window.BeginInvoke((MethodInvoker)delegate { Window.Refresh(); });
 					OnUpdate();
-					Thread.Sleep(1);
+					Thread.Sleep(2);
 				}
 				catch
 				{
