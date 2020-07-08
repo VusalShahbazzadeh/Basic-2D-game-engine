@@ -32,6 +32,20 @@ namespace ExpressedEngine.ExpressedEngine
 			ExpressedEngine.RegisterSprite(this);
 		}
 
+		public Sprite2D(bool IsReference,string Directory)
+		{
+			this.IsReference = IsReference;
+			this.Directory = Directory;
+
+			Image tmp = Image.FromFile($"Assets/Sprites/{Directory}.png");
+			Bitmap sprite = new Bitmap(tmp, (int)this.Scale.X, (int)this.Scale.Y);
+
+			Sprite = sprite;
+
+			Log.Info($"[SHAPE2D]({Tag}) - Has been registered! ");
+			ExpressedEngine.RegisterSprite(this);
+		}
+
 		public Sprite2D(Vector2 Position, Vector2 Scale, Sprite2D reference, string Tag)
 		{
 			this.Position = Position;
