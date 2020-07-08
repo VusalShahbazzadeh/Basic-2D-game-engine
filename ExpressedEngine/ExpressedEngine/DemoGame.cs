@@ -23,11 +23,11 @@ namespace ExpressedEngine
 		string[,] Map =
 		{
 			{"g","g","g","g","g","g","g" },
-			{"g",".",".",".",".",".","g" },
-			{"g",".",".",".","g",".","g" },
-			{"g",".","g","g","g",".","g" },
-			{"g",".","g",".","g",".","g" },
-			{"g",".","g",".",".",".","g" },
+			{"g","c","c","c","c","c","g" },
+			{"g","c","c","c","g","c","g" },
+			{"g","c","g","g","g","c","g" },
+			{"g","c","g","c","g","c","g" },
+			{"g","c","g","c","c","c","g" },
 			{"g","g","g","g","g","g","g" }
 		};
 
@@ -43,10 +43,12 @@ namespace ExpressedEngine
 				{
 					if (Map[j, i] == "g")
 						new Sprite2D(new Vector2(i * 50, j * 50), new Vector2(50, 50), "Tiles/ground", "Ground");
+					if (Map[j, i] == "c")
+						new Sprite2D(new Vector2(i * 50, j * 50), new Vector2(50, 50), "Collectables/star", "Coin");
 				}
 			}
 
-			player = new Sprite2D(new Vector2(50, 50), new Vector2(50, 50), "Players/skull", "Player");
+			player = new Sprite2D(new Vector2(50, 50), new Vector2(40, 40), "Players/skull", "Player");
 			//player2 = new Sprite2D(new Vector2(100, 0), new Vector2(200, 200), "Players/skull", "Player2");
 
 		}
