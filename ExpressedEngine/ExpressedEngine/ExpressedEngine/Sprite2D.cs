@@ -32,9 +32,10 @@ namespace ExpressedEngine.ExpressedEngine
 			ExpressedEngine.RegisterSprite(this);
 		}
 
-		public Sprite2D(bool IsReference,string Directory)
+		public Sprite2D(Vector2 Scale,string Directory)
 		{
-			this.IsReference = IsReference;
+			this.IsReference = true;
+			this.Scale = Scale;
 			this.Directory = Directory;
 
 			Image tmp = Image.FromFile($"Assets/Sprites/{Directory}.png");

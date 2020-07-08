@@ -35,8 +35,8 @@ namespace ExpressedEngine
 		public override void OnLoad()
 		{
 			BackgroundColor = Color.Black;
-			Sprite2D groundRef = new Sprite2D(new Vector2(1000,1000), new Vector2(50, 50), "Tiles/ground", "Ground");
-			Sprite2D coinRef = new Sprite2D(new Vector2(1000,1000), new Vector2(50, 50), "Collectables/star", "Coin");
+			Sprite2D groundRef = new Sprite2D(new Vector2(50, 50), "Tiles/ground");
+			Sprite2D coinRef = new Sprite2D(new Vector2(50, 50), "Collectables/star");
 			//player = new Sprite2D(new Vector2(10, 10), new Vector2(91, 80),"Players/skull" , "Player");
 			for (int i = 0; i < Map.GetLength(1); i++)
 			{
